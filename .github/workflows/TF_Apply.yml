@@ -12,7 +12,7 @@ jobs:
     name: "Terraform"
     runs-on: ubuntu-latest
     env:	
-      AWS_REGION: 'us-east-1'
+      AWS_REGION: 'ap-south-1'
 
     steps:
       - name: Checkout
@@ -21,9 +21,9 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::357171621133:role/TFC-AWS-OIDC
+          role-to-assume: arn:aws:iam::003706946660:role/TerraformIAMRole
           role-session-name: samplerolesession
-          aws-region: 'us-east-1'
+          aws-region: 'ap-south-1'
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.2
