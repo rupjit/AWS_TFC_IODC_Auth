@@ -1,21 +1,20 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "Federated": "arn:aws:iam::357171621133:oidc-provider/token.actions.githubusercontent.com"
-            },
-            "Action": "sts:AssumeRoleWithWebIdentity",
-            "Condition": {
-                "StringEquals": {
-                    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-                    "token.actions.githubusercontent.com:sub": [
-                        "repo:RekhuGopal/AWS_TFC_IODC_Auth:pull_request",
-                        "repo:RekhuGopal/AWS_TFC_IODC_Auth:ref:refs/heads/main"
-                    ]
-                }
-            }
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Principal": {
+				"Federated": "arn:aws:iam::003706946660:oidc-provider/app.terraform.io"
+			},
+			"Action": "sts:AssumeRoleWithWebIdentity",
+			"Condition": {
+				"StringEquals": {
+					"app.terraform.io:aud": "aws.workload.identity"
+				},
+				"StringLike": {
+					"app.terraform.io:sub": "organization:TFC-Rupjit:project:*:workspace:*:run_phase:*"
+				}
+			}
+		}
+	]
 }
