@@ -21,7 +21,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::003706946660:role/TerraformIAMRole
+          role-to-assume: arn:aws:iam::003706946660:role/TFCIAMGitRole
           role-session-name: samplerolesession
           aws-region: 'ap-south-1'
 
