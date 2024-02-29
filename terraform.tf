@@ -8,10 +8,10 @@ terraform {
   }
  
 backend "remote" {
-  organization = "CloudQuickLabs"
+  organization = "TFC-Rupjit"
 
     workspaces {
-      name = "TFC-AWS-OIDC"
+      name = "AWS_TFC_IODC_Auth"
     }
   }
 }
